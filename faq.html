@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | VisionEase</title>
+  <meta name="description" content="Frequently asked questions about VisionEase spectacles and smart lenses.">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== FAQ PAGE ===== */
+
+    /* Fullscreen video background wrapper */
+    .faq-page {
+      position: relative;
+      min-height: 100vh;
+      color: #fff;
+      background: var(--navy);
+    }
+    .faq-bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.22;
+      pointer-events: none;
+    }
+    .faq-bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(23,30,25,0.88) 0%, rgba(10,10,18,0.92) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* All content above the video */
+    .faq-content-wrap {
+      position: relative;
+      z-index: 10;
+      padding-top: 130px;
+    }
+
+    /* ---- HERO HEADER ---- */
+    .faq-hero {
+      text-align: center;
+      padding: 80px 48px 60px;
+    }
+    .faq-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 24px;
+    }
+    .faq-hero-eyebrow::before,
+    .faq-hero-eyebrow::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--sage);
+      opacity: 0.5;
+    }
+    .faq-hero-title {
+      font-family: var(--font-anton);
+      font-size: clamp(5rem, 14vw, 14rem);
+      line-height: 0.85;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+    .faq-hero-title .outline {
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.3);
+      color: transparent;
+    }
+    .faq-hero-sub {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.45);
+      max-width: 540px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* ---- STATS BAR ---- */
+    .faq-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin: 60px 0;
+    }
+    .faq-stat {
+      flex: 1;
+      max-width: 240px;
+      text-align: center;
+      padding: 40px 24px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .faq-stat:last-child { border-right: none; }
+    .faq-stat-num {
+      font-family: var(--font-anton);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .faq-stat-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-top: 8px;
+    }
+
+    /* ---- ACCORDION FAQ ---- */
+    .faq-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+    }
+    .faq-section-title {
+      font-family: var(--font-anton);
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #fff;
+      font-family: var(--font-anton);
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 28px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      transition: color 0.3s;
+    }
+    .faq-question:hover { color: var(--sage); }
+    .faq-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px;
+      line-height: 1;
+      transition: background 0.3s, border-color 0.3s, transform 0.4s ease;
+    }
+    .faq-item.open .faq-icon {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: var(--navy);
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1), padding 0.4s ease;
+      padding: 0 0;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-bottom: 28px;
+    }
+    .faq-answer p {
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 680px;
+    }
+    .faq-answer .tag {
+      display: inline-block;
+      background: rgba(183,198,194,0.12);
+      color: var(--sage);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    /* ---- CONTACT CTA STRIP ---- */
+    .faq-cta {
+      background: rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 64px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      border-radius: 16px;
+    }
+    .faq-cta-text h3 {
+      font-family: var(--font-anton);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .faq-cta-text p {
+      color: rgba(255,255,255,0.4);
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .faq-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      color: var(--navy);
+      font-family: var(--font-anton);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      padding: 18px 40px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .faq-cta-btn:hover {
+      background: var(--soft-blue);
+      transform: translateY(-3px);
+    }
+
+    /* ---- FOOTER (same as other pages) ---- */
+
+    @media (max-width: 768px) {
+      .faq-hero { padding: 60px 24px 40px; }
+      .faq-section { padding: 0 24px 60px; }
+      .faq-stats { flex-wrap: wrap; }
+      .faq-stat { flex: 1 1 40%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .faq-cta { flex-direction: column; text-align: center; padding: 40px 24px; margin: 0 24px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo"><a href="index.html">VISIONEASE</a></div>
+    <div class="nav-links">
+      <a href="index.html">Works</a>
+      <a href="spectacles.html">Spectacles</a>
+      <a href="lenses.html">Lenses</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <a href="cart.html" class="nav-btn" style="border:none;">CART (0)</a>
+      <a href="login.html" class="nav-btn">LOGIN</a>
+      <a href="signup.html" class="nav-btn" style="background:var(--white); color:var(--navy);">SIGNUP</a>
+    </div>
+  </nav>
+
+  <!-- Fullscreen background video -->
+  <video autoplay muted loop playsinline class="faq-bg-video">
+    <source src="videos copy/signup.mp4" type="video/mp4">
+  </video>
+  <div class="faq-bg-overlay"></div>
+
+  <!-- All page content -->
+  <div class="faq-content-wrap">
+
+    <!-- Hero header -->
+    <div class="faq-hero reveal">
+      <div class="faq-hero-eyebrow">Help Centre</div>
+      <h1 class="faq-hero-title">
+        FREQ<span class="outline">UENTLY</span><br>ASKED
+      </h1>
+      <p class="faq-hero-sub">Everything you need to know about our products, shipping, returns, and smart lens technology.</p>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="faq-stats reveal">
+      <div class="faq-stat">
+        <div class="faq-stat-num">24/7</div>
+        <div class="faq-stat-label">Support</div>
+      </div>
+      <div class="faq-stat">
+        <div class="faq-stat-num">30</div>
+        <div class="faq-stat-label">Day Returns</div>
+      </div>
+      <div class="faq-stat">
+        <div class="faq-stat-num">50K+</div>
+        <div class="faq-stat-label">Happy Customers</div>
+      </div>
+      <div class="faq-stat">
+        <div class="faq-stat-num">4.9★</div>
+        <div class="faq-stat-label">Avg. Rating</div>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion: Shipping -->
+    <div class="faq-section reveal">
+      <div class="faq-section-title">Shipping &amp; Delivery</div>
+
+      <div class="faq-item open">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you ship worldwide?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Global</span>
+          <p>Yes, we offer global shipping across all continents via secure express delivery routes. Orders are processed within 24 hours and typically arrive within 5–10 business days internationally.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does standard delivery take?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Delivery</span>
+          <p>Domestic orders take 2–4 business days. International orders take 5–10 business days. Express overnight shipping is available at checkout for an additional fee.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is my order insured during shipping?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Insurance</span>
+          <p>All orders above $150 are automatically insured during transit. For orders below this threshold, optional shipping insurance can be added at checkout for $4.99.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion: Products -->
+    <div class="faq-section reveal">
+      <div class="faq-section-title">Products &amp; Safety</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Are the smart lenses medically safe?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Medical</span>
+          <p>Absolutely. All our smart lenses are rigorously tested under medical scrutiny and are CE &amp; FDA approved for daily wear up to 16 hours. Each batch undergoes clinical trials before market release.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do spectacles come with a prescription option?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Custom</span>
+          <p>Yes. All spectacle frames can be fitted with custom prescription lenses. Simply upload your prescription at checkout, and our opticians will prepare your order within 3–5 business days.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What materials are used in the frames?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Materials</span>
+          <p>Our frames are crafted from aerospace-grade titanium, plant-derived acetate, and carbon fibre composites — lightweight, hypoallergenic, and built to last a decade of heavy daily use.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion: Returns -->
+    <div class="faq-section reveal">
+      <div class="faq-section-title">Returns &amp; Refunds</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I refund augmented bionics?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Policy</span>
+          <p>Implanted bionic devices are final sale due to strict sanitary and medical protocols. However, external spectacles and non-implanted smart lenses carry a standard 30-day return policy, no questions asked.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do I initiate a return?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Returns</span>
+          <p>Email us at returns@visionease.com with your order number. We'll send a prepaid shipping label within 24 hours. Refunds are processed to your original payment method within 5–7 business days of receiving the item.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What if my product arrives damaged?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="tag">Damage</span>
+          <p>We're sorry that happened. Take a photo of the damage and email it to support@visionease.com within 48 hours of delivery. We'll ship a replacement free of charge via express delivery immediately.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact CTA strip -->
+    <div class="faq-cta reveal">
+      <div class="faq-cta-text">
+        <h3>Still have questions?</h3>
+        <p>Our team is available 24/7 — we usually respond in under 2 hours.</p>
+      </div>
+      <a href="contact.html" class="faq-cta-btn">
+        CONTACT US →
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="footer-top reveal">
+        <h2 class="foot-title">LET'S CREATE</h2>
+        <a href="mailto:hello@visionease.com" class="foot-email">hello@visionease.com</a>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">© 2026 VISIONEASE. ALL RIGHTS RESERVED.</div>
+        <div class="legal-links">
+          <a href="#">PRIVACY</a>
+          <a href="#">TERMS</a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /faq-content-wrap -->
+
+  <div class="custom-cursor"></div>
+  <script src="script.js"></script>
+  <script>
+    // Accordion toggle (CSS-only via max-height, JS just toggles class)
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      // Open clicked if it was closed
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>

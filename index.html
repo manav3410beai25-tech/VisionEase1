@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VisionEase | Premium Eyewear</title>
+  <meta name="description" content="VisionEase - Spectacles, smart lenses, and the human eye.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon copy.png"> 
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo"><a href="index.html">VISIONEASE</a></div>
+    <div class="nav-links">
+      <a href="index.html">Works</a>
+      <a href="spectacles.html">Spectacles</a>
+      <a href="lenses.html">Lenses</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <a href="cart.html" class="nav-btn" style="border:none;">CART (0)</a>
+      <a href="login.html" class="nav-btn">LOGIN</a>
+      <a href="signup.html" class="nav-btn" style="background:var(--white); color:var(--navy);">SIGNUP</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero hover-trigger">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="videos copy/mainspecs1.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    
+    <!-- Ambient Orbs -->
+    <div class="orb orb-sage"></div>
+    <div class="orb orb-softblue"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title reveal">
+        <span class="block">BEYOND</span>
+        <span class="block text-outline">VISION</span>
+      </h1>
+      <div class="hero-bottom reveal">
+        <p class="hero-desc">Elevating the human eye with precision spectacles and futuristic smart lenses.</p>
+        <div class="bounce-arrow">
+         🤍
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDITORIAL SHOWCASE + TICKER ===== -->
+
+  <section id="portfolio" class="editorial-showcase">
+
+    <!-- Top asymmetric grid -->
+    <div class="editorial-top">
+
+      <!-- Left: bold text -->
+      <div class="ed-left">
+        <span class="ed-eyebrow">Collection 2026</span>
+        <h2 class="ed-title">
+          SHOP<br>
+          <span class="red">SPECS</span><br>
+          &amp; LENSES
+        </h2>
+        <a href="spectacles.html" class="ed-shop-btn">
+          BUY NOW
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14m0 0l-7-7m7 7l-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Center: large hero product -->
+      <div class="ed-center">
+        <img src="images copy/specs7.jpg" alt="VisionEase Hero Product">
+        <span class="ed-center-label">★ Best Seller 2026</span>
+        <a href="spectacles.html" class="ed-center-cta">EXPLORE SPECTACLES →</a>
+      </div>
+
+      <!-- Right: info panels -->
+      <div class="ed-right">
+
+        <!-- Top-right: featured lens -->
+        <div class="ed-right-top">
+          <div class="er-tag">20TH COLLECTION · SMART LENSES</div>
+          <a href="lenses.html" class="er-featured-wrap">
+            <img src="images copy/lens4.jpg" alt="Iris Scanner" class="er-featured-img">
+            <div>
+              <div class="er-featured-title">Iris Scanner<br>Series AX9</div>
+              <span class="er-arrow">→</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Mid-right: stats -->
+        <div class="ed-right-bottom">
+          <div class="ed-stat-big">50 078</div>
+          <div class="ed-stat-meta">
+            <span class="ed-stat-meta-item">
+              
+             😇 HAPPY CUSTOMERS
+            </span>
+          </div>
+          <div class="ed-stars">
+            <div class="ed-star"></div>
+            <div class="ed-star"></div>
+            <div class="ed-star"></div>
+            <div class="ed-star"></div>
+            <div class="ed-star"></div>
+          </div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);margin: 8px 0 20px; letter-spacing:0.05em;">4.9 / 5.0 RATING</div>
+          <a href="lenses.html" class="ed-more-link">MORE PRODUCTS →</a>
+        </div>
+
+        <!-- Bottom-right: lens card -->
+        <a href="lenses.html" class="ed-right-lens">
+          <img src="images copy/lens6.jpg" alt="HUD Pro">
+          <div>
+            <div class="ed-right-lens-title">EXPLORE LENSES</div>
+            <div class="ed-right-lens-sub">Smart Contact</div>
+          </div>
+          <div class="ed-lens-arrow">→</div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Infinite image ticker -->
+    <div class="ed-ticker">
+      <div class="ed-ticker-track">
+        <!-- Set A -->
+        <div class="ed-ticker-item">
+          <img src="images copy/specs1.jpg" class="ed-ticker-img" alt="Aura Frames">
+          <div><div class="ed-ticker-name">AURA FRAMES</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens1.jpg" class="ed-ticker-img" alt="Focus Lens">
+          <div><div class="ed-ticker-name">FOCUS LENS</div><div class="ed-ticker-cat">Smart Contact</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs2.jpg" class="ed-ticker-img" alt="Onyx Series">
+          <div><div class="ed-ticker-name">ONYX SERIES</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens2.jpg" class="ed-ticker-img" alt="Bionic Vision">
+          <div><div class="ed-ticker-name">BIONIC VISION</div><div class="ed-ticker-cat">Implants</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs3.jpg" class="ed-ticker-img" alt="Classic Aviator">
+          <div><div class="ed-ticker-name">CLASSIC AVIATOR</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens3.jpg" class="ed-ticker-img" alt="Night Vision">
+          <div><div class="ed-ticker-name">NIGHT VISION</div><div class="ed-ticker-cat">Smart Contact</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs4.jpg" class="ed-ticker-img" alt="Retro Round">
+          <div><div class="ed-ticker-name">RETRO ROUND</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens4.jpg" class="ed-ticker-img" alt="Iris Scanner">
+          <div><div class="ed-ticker-name">IRIS SCANNER</div><div class="ed-ticker-cat">AR Lens</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs5.jpg" class="ed-ticker-img" alt="Carbon Fibre XL">
+          <div><div class="ed-ticker-name">CARBON FIBRE XL</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens5.jpg" class="ed-ticker-img" alt="Solar Flare">
+          <div><div class="ed-ticker-name">SOLAR FLARE</div><div class="ed-ticker-cat">Smart Lens</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs6.jpg" class="ed-ticker-img" alt="Titanium Edge">
+          <div><div class="ed-ticker-name">TITANIUM EDGE</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens6.jpg" class="ed-ticker-img" alt="HUD Pro">
+          <div><div class="ed-ticker-name">HUD PRO</div><div class="ed-ticker-cat">Smart Contact</div></div>
+        </div>
+        <!-- Set B (duplicate for seamless loop) -->
+        <div class="ed-ticker-item">
+          <img src="images copy/specs1.jpg" class="ed-ticker-img" alt="Aura Frames">
+          <div><div class="ed-ticker-name">AURA FRAMES</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens1.jpg" class="ed-ticker-img" alt="Focus Lens">
+          <div><div class="ed-ticker-name">FOCUS LENS</div><div class="ed-ticker-cat">Smart Contact</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs2.jpg" class="ed-ticker-img" alt="Onyx Series">
+          <div><div class="ed-ticker-name">ONYX SERIES</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens2.jpg" class="ed-ticker-img" alt="Bionic Vision">
+          <div><div class="ed-ticker-name">BIONIC VISION</div><div class="ed-ticker-cat">Implants</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs3.jpg" class="ed-ticker-img" alt="Classic Aviator">
+          <div><div class="ed-ticker-name">CLASSIC AVIATOR</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens3.jpg" class="ed-ticker-img" alt="Night Vision">
+          <div><div class="ed-ticker-name">NIGHT VISION</div><div class="ed-ticker-cat">Smart Contact</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs4.jpg" class="ed-ticker-img" alt="Retro Round">
+          <div><div class="ed-ticker-name">RETRO ROUND</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens4.jpg" class="ed-ticker-img" alt="Iris Scanner">
+          <div><div class="ed-ticker-name">IRIS SCANNER</div><div class="ed-ticker-cat">AR Lens</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs5.jpg" class="ed-ticker-img" alt="Carbon Fibre XL">
+          <div><div class="ed-ticker-name">CARBON FIBRE XL</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens5.jpg" class="ed-ticker-img" alt="Solar Flare">
+          <div><div class="ed-ticker-name">SOLAR FLARE</div><div class="ed-ticker-cat">Smart Lens</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/specs6.jpg" class="ed-ticker-img" alt="Titanium Edge">
+          <div><div class="ed-ticker-name">TITANIUM EDGE</div><div class="ed-ticker-cat">Spectacles</div></div>
+        </div>
+        <div class="ed-ticker-item">
+          <img src="images copy/lens6.jpg" class="ed-ticker-img" alt="HUD Pro">
+          <div><div class="ed-ticker-name">HUD PRO</div><div class="ed-ticker-cat">Smart Contact</div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Featured Asymmetric Section -->
+  <section id="about" class="featured">
+    <div class="feat-left reveal">
+      <div class="cyan-square"></div>
+      <img src="images copy/specs5.jpg" alt="Featured Glasses" class="grayscale">
+    </div>
+    <div class="feat-right reveal">
+      <span class="feat-label">CRAFT & INNOVATION</span>
+      <h2 class="feat-title">REDESCOVER SIGHT</h2>
+      <p class="feat-text">Our lenses are meticulously engineered to merge analog tradition with digital augmentation, enhancing every dimension of human vision.</p>
+      <a href="#" class="arrow-link">
+        DISCOVER MORE 
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m0 0l-7-7m7 7l-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Capabilities Section -->
+  <section id="capabilities" class="capabilities">
+    <div class="cap-grid">
+      <div class="cap-left reveal">
+        <span class="cap-label">CAPABILITIES</span>
+        <ul class="cap-list">
+          <li>Optical Engineering</li>
+          <li>Smart Lens UI</li>
+          <li>Ergonomic Design</li>
+          <li>Augmented Reality</li>
+        </ul>
+      </div>
+      <div class="cap-right reveal">
+        <h2 class="cap-title">Building the next phase of human evolution through <i>precision optics</i> and <i>integrated technology</i>.</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Carousel -->
+  <section class="testimonial">
+    <div class="bg-quote">"</div>
+    <div class="testimo-content reveal">
+      <h2 class="testimo-quote">"VISIONEASE COMPLETELY SHIFTED MY PERSPECTIVE. THE SMART LENSES FEEL LIKE A NATURAL EXTENSION OF MY EYES."</h2>
+      <div class="testimo-bio">
+        <img src="logo.jpg" alt="Avatar" class="avatar">
+        <span class="testimo-name">Manav Mibhur Karan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-top reveal">
+      <h2 class="foot-title">LET'S CREATE</h2>
+      <a href="mailto:hello@visionease.com" class="foot-email">hello@visionease.com</a>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">© 2026 VISIONEASE. ALL RIGHTS RESERVED.</div>
+      <div class="legal-links">
+        <a href="#">PRIVACY</a>
+        <a href="#">TERMS</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="custom-cursor"></div>
+  <script src="script.js"></script>
+</body>
+</html>

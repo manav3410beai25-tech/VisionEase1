@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | VisionEase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-logo"><a href="index.html">VISIONEASE</a></div>
+    <div class="nav-links">
+      <a href="index.html">Works</a>
+      <a href="spectacles.html">Spectacles</a>
+      <a href="lenses.html">Lenses</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <a href="cart.html" class="nav-btn" style="border:none;">CART (0)</a>
+      <a href="login.html" class="nav-btn">LOGIN</a>
+      <a href="signup.html" class="nav-btn" style="background:var(--white); color:var(--navy);">SIGNUP</a>
+    </div>
+  </nav>
+
+  <section class="hero hover-trigger">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="videos copy/specs2.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" style="align-items: center; justify-content: center;">
+      <h1 class="hero-title reveal" style="font-size: 6rem; margin-top: 10vh;">GET IN TOUCH</h1>
+      <div class="reveal" style="width: 100%; max-width: 400px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 8px; margin-top: 32px;">
+        <input type="text" placeholder="Name" style="width:100%; padding:15px; margin-bottom:15px; border:none; background:#fff; font-family:inherit;">
+        <input type="email" placeholder="Email" style="width:100%; padding:15px; margin-bottom:15px; border:none; background:#fff; font-family:inherit;">
+        <textarea placeholder="Message" rows="4" style="width:100%; padding:15px; margin-bottom:15px; border:none; background:#fff; font-family:inherit;"></textarea>
+        <button class="nav-btn" style="width:100%; background:var(--white); color:var(--navy); font-weight:600; cursor:pointer;">SEND</button>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

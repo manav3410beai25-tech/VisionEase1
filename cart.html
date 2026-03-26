@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | VisionEase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-logo"><a href="index.html">VISIONEASE</a></div>
+    <div class="nav-links">
+      <a href="index.html">Works</a>
+      <a href="spectacles.html">Spectacles</a>
+      <a href="lenses.html">Lenses</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <a href="cart.html" class="nav-btn" style="border:none;">CART (2)</a>
+      <a href="login.html" class="nav-btn">LOGIN</a>
+      <a href="signup.html" class="nav-btn" style="background:var(--white); color:var(--navy);">SIGNUP</a>
+    </div>
+  </nav>
+
+  <section class="hero hover-trigger">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="videos copy/specs2.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" style="align-items: center; justify-content: center; padding-top: 100px;">
+      <h1 class="hero-title reveal" style="font-size: 5rem; margin-bottom: 24px;">YOUR CART</h1>
+      
+      <!-- Activated Cart Logic via JS -->
+      <div class="reveal" style="width: 100%; max-width: 800px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 8px; text-align: left;">
+        
+        <div id="cart-items-container">
+            <!-- Items injected by script.js -->
+        </div>
+        
+        <div id="cart-total-container">
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-anton); font-size: 2rem; margin-top: 30px; letter-spacing: 0.05em;">
+              <span>TOTAL:</span>
+              <span id="cart-total-amount">$0.00</span>
+            </div>
+            
+            <div style="margin-top: 40px; text-align: right;">
+              <a href="#" class="nav-btn" style="background:var(--white); color:var(--navy); padding: 16px 32px; font-weight:600; font-size: 1rem; border: none; cursor: pointer; display: inline-block;">CHECKOUT</a>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
